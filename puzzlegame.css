@@ -1,8 +1,8 @@
 .puzzle-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
-  max-width: 800px;
+  max-width: 600px;
   margin: 20px auto;
 }
 
