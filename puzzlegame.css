@@ -1,0 +1,37 @@
+.puzzle-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.puzzle-piece {
+  width: 100%;
+  height: 200px;
+  background-color: #ccc;
+  cursor: move;
+  position: relative;
+}
+
+.puzzle-piece:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("puzzle-image.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.puzzle-piece.dragging {
+  z-index: 100;
+}
+
+.puzzle-piece.dropped:before {
+  opacity: 1;
+}
