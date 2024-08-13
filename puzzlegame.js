@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentDraggedElement;
 
   puzzlePieces.forEach((piece, index) => {
-    piece.style.gridColumn = (index % 4) + 1;
-    piece.style.gridRow = Math.floor(index / 4) + 1;
+    piece.style.gridColumn = (index % 3) + 1;
+    piece.style.gridRow = Math.floor(index / 3) + 1;
 
     piece.addEventListener('dragstart', dragStartHandler);
     piece.addEventListener('dragover', dragOverHandler);
