@@ -9,9 +9,9 @@ window.initGame = (React, assetsUrl) => {
 
     useEffect(() => {
       // Initialize the puzzle piece positions
-      const initialPositions = Array(9).fill().map((_, index) => ({
-        gridColumn: (index % 3) + 1,
-        gridRow: Math.floor(index / 3) + 1,
+      const initialPositions = Array(4).fill().map((_, index) => ({
+        gridColumn: (index % 2) + 1,
+        gridRow: Math.floor(index / 2) + 1,
       }));
       setPiecePositions(initialPositions);
     }, []);
