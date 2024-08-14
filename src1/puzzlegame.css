@@ -1,17 +1,29 @@
-.puzzle-container {
+/* puzzle-game.css */
+.puzzle-game {
+  text-align: center;
+}
+
+.game-board {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
   max-width: 600px;
   margin: 20px auto;
 }
 
 .puzzle-piece {
-  width: 100%;
+  width: 200px;
   height: 200px;
   background-color: #ccc;
+  border: 2px solid #777;
   cursor: move;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: opacity 0.3s ease, background-image 0.3s ease;
 }
 
 .puzzle-piece:before {
@@ -21,15 +33,22 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("puzzle-image.jpg");
+  background-image: url("puzzle-image.png");
   background-size: cover;
   background-position: center;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
+.puzzle-piece img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .puzzle-piece.dragging {
   z-index: 100;
+  opacity: 0.5;
 }
 
 .puzzle-piece.dropped:before {
